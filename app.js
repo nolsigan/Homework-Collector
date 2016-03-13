@@ -4,13 +4,11 @@ var und = new Upndown();
 var fs = require("fs");
 var yargs = require("yargs").argv;
 
-var text = fs.readFileSync(yargs.in, "utf8");
-var out = fs.readFileSync(yargs.out, "utf8");
-
+var text = fs.readFileSync("../SNU/3-2/"+yargs.class+"/"+yargs.day, "utf8");
+var out = fs.readFileSync("../SNU/3-2/Homeworks.md", "utf8");
 
 var tree = md.parse( text );
 var out_tree = md.parse(out);
-
 
 var j=0;
 var len = out_tree.length;
@@ -33,7 +31,7 @@ for(var i=0; i < tree.length; ++i){
 var te = md.renderJsonML( md.toHTMLTree(out_tree) );
 und.convert(te, function(err, mark){
     if(err) console.log(err);
-    else fs.writeFile('./out.md', mark, function(er){
+    else fs.writeFile('../SNU/3-2/Homeworks.md', mark, function(er){
         if(err) console.log(er);    
     });
 });
