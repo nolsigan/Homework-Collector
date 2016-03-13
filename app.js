@@ -5,7 +5,7 @@ var fs = require("fs");
 var yargs = require("yargs").argv;
 
 var text = fs.readFileSync(yargs.in, "utf8");
-var out = fs.readFileSync("out.md", "utf8");
+var out = fs.readFileSync(yargs.out, "utf8");
 
 
 var tree = md.parse( text );
@@ -37,14 +37,3 @@ und.convert(te, function(err, mark){
         if(err) console.log(er);    
     });
 });
-
-
-// console.log(tree);
-//         var te = md.renderJsonML(md.toHTMLTree(tree));
-//         console.log(te);
-//         und.convert(te, function(err, mark){
-//            if(err) console.log(err);
-//            else fs.writeFile('./out.md', mark, function(err){
-//                if(err) console.log(err);
-//            });
-//         });
