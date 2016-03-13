@@ -1,0 +1,21 @@
+# 실습 - Socket
+
+* Socket
+    * port
+        * 1024 ~ 65535까지 사용 가능
+    * types
+        * TCP
+            * 신뢰성 보장
+        * UDP
+            * data를 보내긴 하는데 받는지는 알 수 없음
+
+## Homework
+
+#### Socket Programming
+
+* Until : 2016.03.27 (SUN) 11:59 PM
+
+#### Test Programming
+
+* Until : Yes
+    
