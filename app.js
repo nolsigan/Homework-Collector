@@ -7,7 +7,7 @@ var yargs = require("yargs").argv;
 if(yargs.day < 1000) yargs.day = "0" + yargs.day;
 
 var text = fs.readFileSync("../SNU/3-2/"+yargs.class+"/"+yargs.day+".md", "utf8");
-var out = fs.readFileSync("../SNU/3-2/Homeworks.md", "utf8");
+var out = fs.readFileSync("../SNU/3-2/README.md", "utf8");
 
 var tree = md.parse( text );
 var out_tree = md.parse(out);
@@ -33,7 +33,7 @@ for(var i=0; i < tree.length; ++i){
 var te = md.renderJsonML( md.toHTMLTree(out_tree) );
 und.convert(te, function(err, mark){
     if(err) console.log(err);
-    else fs.writeFile('../SNU/3-2/Homeworks.md', mark, function(er){
+    else fs.writeFile('../SNU/3-2/README.md', mark, function(er){
         if(err) console.log(er);    
     });
 });
