@@ -4,7 +4,9 @@ var und = new Upndown();
 var fs = require("fs");
 var yargs = require("yargs").argv;
 
-var text = fs.readFileSync("../SNU/3-2/"+yargs.class+"/"+yargs.day, "utf8");
+if(yargs.day < 1000) yargs.day = "0" + yargs.day;
+
+var text = fs.readFileSync("../SNU/3-2/"+yargs.class+"/"+yargs.day+".md", "utf8");
 var out = fs.readFileSync("../SNU/3-2/Homeworks.md", "utf8");
 
 var tree = md.parse( text );
